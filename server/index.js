@@ -21,9 +21,9 @@ app.use(express.json({limit:'30mb',extended:true}))
 app.use(express.urlencoded({limit:'30mb',extended:true}))
 app.use('/uploads',express.static(path.join('uploads')))
 
-app.get('/',(req,res)=>{
-  res.send("hello")
-})
+app.get('/', (req, res) => {
+  res.send('Hello from the server!');
+});
 
 app.use(bodyParser.json())
 
@@ -31,7 +31,6 @@ app.use('/user', userRoutes)
 app.use('/video', videoRoutes)
 app.use('/comment', commentRoutes)
 
-const password = 'otvzK9qJ8zavtrY0'
 
 const PORT = process.env.PORT;
 
@@ -46,3 +45,5 @@ mongoose.connect(DB_URL,{useNewUrlParser: true, useUnifiedTopology: true}).then(
 }).catch((error)=>{
   console.log(error)
 })
+
+module.exports = app;
