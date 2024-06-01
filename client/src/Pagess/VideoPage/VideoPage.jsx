@@ -32,10 +32,10 @@ const VideoPage = () => {
 
   useEffect(() => {
     if (likeData?.includes(videoId)) {
-      setLike(!like);
+      setLike(true);
     } 
     if (saveData?.includes(videoId)) {
-      setSave(!save);
+      setSave(true);
     }
   }, [likeData,videoId,saveData]);
 
