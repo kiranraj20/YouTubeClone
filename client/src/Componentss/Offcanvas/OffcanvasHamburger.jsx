@@ -1,7 +1,7 @@
 import React from 'react'
 import { RxHamburgerMenu } from "react-icons/rx";
 import './OffcanvasHamburger.css'
-import logo from "C:/Users/uset/OneDrive/Desktop/Assesments/NullClassInternship/youtube-clone/src/Utilitiess/Logo/favicon.png";
+import logo from "../../Utilitiess/Logo/favicon.png";
 
 const Offcanvas = () => {
   return (
