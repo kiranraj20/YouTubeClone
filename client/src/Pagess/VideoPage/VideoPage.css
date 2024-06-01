@@ -1,0 +1,53 @@
+.video-page-container{
+  width: 90vw;
+  top: 16vh;
+  overflow: hidden;
+  display: flex;
+  padding: 20px;
+}
+.video-page-profile{
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid lightgray;
+}
+.video-page-head{
+  padding: 0px 20px;
+}
+.video-page-icon{
+  width: 50px;
+  height: 50px;
+  border: 1px solid lightslategray;
+  padding: 12px;
+  border-radius: 50%;
+}
+.video-page-title{
+  font-weight: bold;
+  margin: 0;padding: 0;
+}
+.video-page-channel{
+  margin: 0;padding: 0;
+  font-size: small;
+}
+.video-page-views{
+  margin: 0;padding: 0;
+  font-size: small;
+}
+.video-page-timestamp{
+  margin: 0;padding: 0;
+  font-size: small;
+}
+.video-page-btns{
+  display: flex;
+  align-items: center;
+}
+.video-page-like-btn,.video-page-dislike-btn,.video-page-save-btn,.video-page-share-btn,.video-page-menu-btn{
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.video-page-comments{
+  padding: 10px;
+}

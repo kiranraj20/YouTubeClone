@@ -1,0 +1,53 @@
+.create-channel{
+  background-color:white;
+  width: 300px;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  z-index: 11;
+}
+.channel-close-btn{
+  font-size: larger;
+  cursor: pointer;
+}
+.create-channel-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.channel-name,.channel-desc{
+  padding: 10px;
+}
+.i-channel-name,.i-channel-name:hover{
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: small;
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+}
+.i-channel-desc,.i-channel-desc:hover{
+  width: 100%;
+  max-height: 70%;
+  outline: none;
+  border: none;
+  font-size: small;
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+}
+.channel-submit-btn{
+  padding: 5px 10px;
+  border: 1px solid lightgray;
+  outline: none;
+  border-radius: 3px;
+}
+.channel-submit-btn:focus,.i-channel-desc:focus,.i-channel-name:focus{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.channel-submit{
+  display: flex;
+  justify-content: center;
+}

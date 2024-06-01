@@ -1,0 +1,84 @@
+.comments-form-box{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.i-comments{
+  background-color: transparent;
+  width: 70%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid lightslategray;
+}
+.add-comment-btn{
+  border: 1px solid lightslategray;
+  padding: 5px 20px;
+  margin: 0px 5px;
+  border-radius: 50px;
+}
+.add-comment-btn:hover{
+  background: lightgray;
+}
+.comment-box{
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.comment-bar{
+  display: flex;
+  align-items: center;
+}
+.comment-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  height: 50px;
+  width: 50px;
+  border: 1px solid lightslategray;
+  border-radius: 50px;
+}
+.comment-desc{
+  padding: 0px 10px;
+}
+.comment-name{
+  font-size: small;
+  font-weight: bold;
+}
+.comment-text{
+  outline: none;
+}
+.comment-text:focus{
+  border-bottom: 1px solid gray;
+  width: 100%;
+}
+.edit-delete-comment{
+  padding: 3px 10px;
+  border: 1px solid lightslategray; 
+  border-radius: 50px;
+  cursor: pointer;
+  color: orangered;
+  text-wrap: nowrap;
+  font-style: italic;
+}
+.comment-timestamp{
+  padding-left: 10px;
+  font-size: smaller;
+  font-style: italic;
+  color: lightslategray;
+}
+.edit-comment:hover,.delete-comment:hover{
+  border-bottom: 1px solid orangered;
+}
+.change-comment{
+  cursor: pointer;
+  font-style: italic;
+  font-size: small;
+  margin: 0px 5px;
+  color: lightslategray;
+  padding: 0;
+}
+.change-comment:hover{
+  border-bottom: 1px solid lightslategray;
+}

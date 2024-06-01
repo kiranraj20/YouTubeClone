@@ -1,0 +1,67 @@
+.upload-video-tab{
+  background-color:white;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  z-index: 11;
+}
+.upload-video-head{
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: large;
+}
+.upload-video-close-btn{
+  cursor: pointer;
+}
+.upload-video-body{
+  padding: 10px;
+  height: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.i-title-box{
+  width: 90%;
+}
+.i-title,.i-title:hover{
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: small;
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid lightslategray;
+}
+.upload-file{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+}
+.file-btn{
+  width: 90%;
+  cursor: pointer;
+}
+
+.upload-btn{
+  padding: 5px 10px;
+  border: 1px solid lightslategray;
+  border-radius: 5px;
+  cursor:pointer;
+}
+.upload-btn:active{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.loader{
+  width: 100px;
+  height: 100px;
+  padding: 10px 0px;
+  margin: auto;
+}

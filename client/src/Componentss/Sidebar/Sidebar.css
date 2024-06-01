@@ -1,0 +1,90 @@
+.sidebar-container{
+  width: 80px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 8vh;
+  left: 0px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.sidebar-home{
+  padding: 20% 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebar-home:hover{
+  background-color: lightcyan;
+  cursor: pointer;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.sidebar-home:active{
+  background-color: lightcyan;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.sidebar-home-text{
+  font-size: x-small;
+}
+
+.sidebar-explore{
+  padding: 20% 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebar-explore:hover{
+  background-color: lightcyan;
+  cursor: pointer;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.sidebar-explore:active{
+  background-color: lightcyan;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.sidebar-explore-text{
+  font-size: x-small;
+}
+
+.sidebar-subscriptions{
+  padding: 20% 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebar-subscriptions:hover{
+  background-color: lightcyan;
+  cursor: pointer;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.sidebar-subscriptions:active{
+  background-color: lightcyan;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.sidebar-subscriptions-text{
+  font-size: x-small;
+}
+
+.sidebar-library{
+  padding: 20% 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebar-library:hover{
+  background-color: lightcyan;
+  cursor: pointer;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.sidebar-library:active{
+  background-color: lightcyan;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.sidebar-library-text{
+  font-size: x-small; 
+}

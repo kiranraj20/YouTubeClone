@@ -1,0 +1,47 @@
+.researchbar-container{
+  display: flex;
+  overflow-x: scroll;
+  height: 8vh;
+  width: 93vw;
+  background-color: white;
+  position: sticky;
+  top: 8vh;
+  z-index: 1;
+}
+
+.researchbar-elements{
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  font-size:small;
+  font-weight: bold;
+  background-color: lightcyan;
+}
+
+.researchbar-elements:hover{
+  cursor: pointer;
+  background-color: cyan;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.researchbar-elements:active{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+
+
+
+
+
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
