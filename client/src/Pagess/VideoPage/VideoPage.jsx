@@ -28,7 +28,7 @@ const VideoPage = () => {
     if (userId) {
       dispatch(getChannel(userId))
     }
-  },[userId]);
+  },[userId,dispatch]);
 
   useEffect(() => {
     if (likeData?.includes(videoId)) {

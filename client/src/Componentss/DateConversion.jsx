@@ -1,4 +1,3 @@
-import React from 'react'
 
 const DateConversion = (date) => {
   const givenDate = new Date(date);

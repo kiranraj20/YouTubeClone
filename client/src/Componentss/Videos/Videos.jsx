@@ -1,7 +1,6 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Videos.css";
 import { FaRegUser } from "react-icons/fa6";
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import DateConversion from '../DateConversion';
 

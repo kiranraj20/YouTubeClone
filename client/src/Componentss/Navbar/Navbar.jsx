@@ -38,7 +38,7 @@ const Navbar = () => {
             setCurrentUser({ email: storage.result.email });
             dispatch(login({ email: storage.result.email }));
         }
-    }, []);
+    }, [dispatch,storage.result.email]);
 
     const selector = useSelector(state => state.authReducer.data);
     useEffect(() => {
