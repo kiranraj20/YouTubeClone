@@ -31,6 +31,13 @@ app.use('/user', userRoutes)
 app.use('/video', videoRoutes)
 app.use('/comment', commentRoutes)
 
+
+const PORT = process.env.PORT;
+
+app.listen(PORT,() => {
+  console.log(`server is running on the port ${PORT}`)
+})
+
 const DB_URL = process.env.CONNECTION_URL;
 
 mongoose.connect(DB_URL,{useNewUrlParser: true, useUnifiedTopology: true}).then(()=>{
