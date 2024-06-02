@@ -16,9 +16,8 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: 'https://null-class-internship-client.vercel.app', // Replace with your frontend's origin
-  methods: 'GET, POST, PUT, DELETE',
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  origin: 'https://null-class-internship-client.vercel.app/', // Replace with your frontend's origin
+  methods: 'GET, POST, PATCH, DELETE',
 };
 
 app.use(cors(corsOptions));
