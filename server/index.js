@@ -10,38 +10,42 @@ import commentRoutes from './routes/comment.js';
 
 import path from 'path'
 
-
 dotenv.config();
 
 const app = express();
 
-app.use(cors())
+// Configure CORS
+const corsOptions = {
+  origin: 'https://null-class-internship-client.vercel.app', // Your client domain
+  optionsSuccessStatus: 200
+};
 
-app.use(express.json({limit:'30mb',extended:true}))
-app.use(express.urlencoded({limit:'30mb',extended:true}))
-app.use('/uploads',express.static(path.join('uploads')))
+app.use(cors(corsOptions));
+
+app.use(express.json({ limit: '30mb', extended: true }));
+app.use(express.urlencoded({ limit: '30mb', extended: true }));
+app.use('/uploads', express.static(path.join('uploads')));
 
 app.get('/', (req, res) => {
   res.send('Hello from the server!');
 });
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
-app.use('/user', userRoutes)
-app.use('/video', videoRoutes)
-app.use('/comment', commentRoutes)
-
+app.use('/user', userRoutes);
+app.use('/video', videoRoutes);
+app.use('/comment', commentRoutes);
 
 const PORT = process.env.PORT;
 
-app.listen(PORT,() => {
-  console.log(`server is running on the port ${PORT}`)
-})
+app.listen(PORT, () => {
+  console.log(`server is running on the port ${PORT}`);
+});
 
 const DB_URL = process.env.CONNECTION_URL;
 
-mongoose.connect(DB_URL,{useNewUrlParser: true, useUnifiedTopology: true}).then(()=>{
-  console.log("connection successful")
-}).catch((error)=>{
-  console.log(error)
-})
+mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+  console.log("connection successful");
+}).catch((error) => {
+  console.log(error);
+});
