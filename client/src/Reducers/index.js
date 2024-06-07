@@ -6,6 +6,7 @@ import currentUserReducer from './currentUser.js'
 import channelReducers from './channel.js';
 import videoReducer from './video.js';
 import commentReducer from './comments.js';
+import historyReducer from './history.js'
 
 export default combineReducers({
   counter: counterReducer,
@@ -15,4 +16,5 @@ export default combineReducers({
   channelReducers,
   videoReducer,
   commentReducer,
+  historyReducer,
 });

@@ -10,11 +10,14 @@ import { useSelector } from 'react-redux';
 const Channel = () => {
 
   const [upload , setUpload] = useState(false)
-  const {authReducer, videoReducer} = useSelector(state=>state)
-  const channelId = authReducer?.data?.result._id
+  const channelId = useSelector(state=>state.authReducer?.data?.result._id)
   const profile = JSON.parse(localStorage.getItem("profile"));
-  const vids = videoReducer?.data?.filter(item=>item.videoChannel === channelId);
-
+  const vids = useSelector(state => 
+    state.videoReducer?.data?.filter(item => 
+      item.filePath[item.filePath.length - 5] !== 'p' && item.videoChannel === channelId
+    )
+  );
+  
   return (
     <div>
       <div className="channel-head">

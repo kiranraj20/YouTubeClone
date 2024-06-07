@@ -17,6 +17,7 @@ import "./Navbar.css";
 import Sidebar from '../Sidebar/Sidebar';
 import AllRoutes from '../AllRoutes';
 import { useNavigate } from 'react-router-dom';
+import { getHistoryByUserId } from '../../Actions/history';
 
 const Navbar = () => {
     const [currentUser, setCurrentUser] = useState({ email: '' });
@@ -33,6 +34,8 @@ const Navbar = () => {
     const storage = JSON.parse(localStorage.getItem('profile') || '{}');
     const channelID = storage?.result?._id || '';
 
+    const points = useSelector(state=> state?.historyReducer?.data?.watchedVideos?.length)
+
     useEffect(() => {
         if (storage?.result?.email) {
             setCurrentUser({ email: storage.result.email });
@@ -44,6 +47,9 @@ const Navbar = () => {
     useEffect(() => {
         if (selector?.result?.email) {
             setCurrentUser({ email: selector.result.email });
+        }
+        if (selector?.result?._id) {
+            dispatch(getHistoryByUserId(selector?.result?._id))
         }
     }, [selector]);
 
@@ -134,6 +140,7 @@ const Navbar = () => {
                                     <div className="profile-bar-tab">
                                         <div className="profile-bar-icon">{currentUser.email.charAt(0).toUpperCase()}</div>
                                         <div className="profile-bar-text">{currentUser.email}</div>
+                                        <div>Points : {points ? points : '0'}</div>
                                     </div>
                                     <div className="create-channel-btn" onClick={() => {setChannel(!channel)}}>
                                         <GrChannel /> {selector?.result?.name || storage?.result?.name ? (

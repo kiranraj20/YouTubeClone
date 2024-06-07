@@ -11,6 +11,7 @@ import { CiMenuKebab } from "react-icons/ci";
 import Comments from '../../Componentss/Comments/Comments';
 import { getVideos, updateVideo } from '../../Actions/Video';
 import { getChannel, likedVideo, savedVideo } from '../../Actions/channelUser';
+import VideoPlayer from '../../Componentss/VideoPlayer/VideoPlayer';
 
 const VideoPage = () => {
   const {videoReducer,channelReducers ,authReducer} = useSelector((state) => state);
@@ -65,16 +66,9 @@ const VideoPage = () => {
       <div className="video-page-layout">
         <div className="video-page-video">
           {data && (
-            <video 
-              src={`http://localhost:5500/${data.filePath}`} 
-              controls 
-              style={{
-                width: '100%',
-                height: '70vh',
-                borderRadius: '10px',
-                objectFit: 'cover',
-                boxShadow: 'rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px',
-              }}
+            <VideoPlayer
+            videoSrc = {`http://localhost:5500/${data?.filePath}`}
+            videoId={videoId}
             />
           )}
         </div>

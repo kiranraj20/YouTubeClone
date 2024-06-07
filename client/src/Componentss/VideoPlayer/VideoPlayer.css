@@ -1,0 +1,20 @@
+.video-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+}
+.video-container{
+  width: 60vw;
+  height: 100%;
+}
+.video {
+  width: 100%;
+  height: 100%;
+}
+.video-item{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit:contain;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}

@@ -4,7 +4,8 @@ import Videos from '../Componentss/Videos/Videos.jsx';
 import { useSelector } from 'react-redux';
 
 const Home = () => {
-  const vids = useSelector(state => state.videoReducer?.data);
+  const vids = useSelector(state => state.videoReducer?.data?.filter((item) => item.filePath[item.filePath.length-5] !== 'p'));
+  
   return (
     <div className="Sidebar d-flex">
         <div className="">

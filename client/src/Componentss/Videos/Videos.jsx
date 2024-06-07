@@ -3,10 +3,12 @@ import "./Videos.css";
 import { FaRegUser } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import DateConversion from '../DateConversion';
+import { useSelector } from 'react-redux';
 
 const Videos = ({vids}) => {
     
     const [videoRefs, setVideoRefs] = useState([]);
+    console.log(useSelector(state=>state))
 
     useEffect(() => {
         setVideoRefs((vidRefs) =>
@@ -43,8 +45,8 @@ const Videos = ({vids}) => {
                 <div className="videos" key={item._id}>
                     <Link to={`/video/${item._id}`}>
                         <video
-                            className='video'
-                            src={`https://null-class-internship-server.vercel.app/${item.filePath}`}
+                            className='video-video'
+                            src={`http://localhost:5500/${item.filePath}`}  //  http://localhost:5500/    https://null-class-internship-server.vercel.app/
                             ref={videoRefs[index]}
                             style={{ outline: 'none',objectFit:'cover' }}
                             width={'100%'}

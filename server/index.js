@@ -8,22 +8,23 @@ import path from 'path';
 import userRoutes from './routes/user.js';
 import videoRoutes from './routes/video.js';
 import commentRoutes from './routes/comment.js';
+import historyRoutes from './routes/history.js'
 
 dotenv.config();
 
 const app = express();
 
 // Configure CORS with detailed settings
-const corsOptions = {
-  origin: 'https://null-class-internship-client.vercel.app', // Your client domain
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
-  optionsSuccessStatus: 200
-};
+// const corsOptions = {
+//   origin: 'http://localhost:3000/', // Your client domain   http://localhost:3000/    https://null-class-internship-client.vercel.app
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+//   credentials: true,
+//   optionsSuccessStatus: 200
+// };
 
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); // Enable pre-flight
+app.use(cors());
+// app.options('*', cors(corsOptions)); // Enable pre-flight
  
 app.use((req, res, next) => {
   console.log(`Request Method: ${req.method}, Request URL: ${req.url}`);
@@ -41,6 +42,7 @@ app.get('/', (req, res) => {
 app.use('/user', userRoutes);
 app.use('/video', videoRoutes);
 app.use('/comment', commentRoutes);
+app.use('/history', historyRoutes);
 
 const PORT = process.env.PORT || 5000;
 
