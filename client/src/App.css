@@ -1,0 +1,9 @@
+.dark-mode{
+    background: #121212 ;
+    /* background-color: #383b43; */
+    color: #e4e2e3;
+    border-color: #E0E0E0 ;
+  }
+  .dark-hover:hover{
+    background-color: #383b43 ;
+  }

@@ -9,22 +9,22 @@ import { Link } from 'react-router-dom';
 
 
 
-const Sidebar = () => {
+const Sidebar = ({color}) => {
   return (
     <div className='sidebar-container'> 
-        <Link to={'/'} className="sidebar-home">
+        <Link to={'/'} className= {`sidebar-home ${color && 'dark-mode dark-hover'}`}>
             <div className="sidebar-home-icon"><MdHomeFilled /></div>
             <div className="sidebar-home-text">Home</div>
         </Link>
-        <Link to={'/explore'} className="sidebar-explore">
+        <Link to={'/explore'} className= {`sidebar-explore ${color && 'dark-mode dark-hover'}`}>
             <div className="sidebar-explore-icon"><MdOutlineExplore /></div>
             <div className="sidebar-explore-text">Explore</div>
         </Link>
-        <Link to={'/subscriptions'} className="sidebar-subscriptions">
+        <Link to={'/subscriptions'} className= {`sidebar-subscriptions ${color && 'dark-mode dark-hover'}`}>
             <div className="sidebar-subscriptions-icon"><MdOutlineSubscriptions /></div>
             <div className="sidebar-subscriptions-text">Subscriptions</div>
         </Link>
-        <Link to={'/library'} className="sidebar-library"> 
+        <Link to={'/library'} className= {`sidebar-library ${color && 'dark-mode dark-hover'}`}> 
             <div className="sidebar-library-icon"><MdOutlineVideoLibrary /></div>
             <div className="sidebar-library-text">Library</div>
         </Link>

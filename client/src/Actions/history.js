@@ -3,6 +3,7 @@ import * as api from "../api";
 export const postHistory = (videoId, userId)=> async(dispatch) => {
   try {
     const { data } = await api.postHistory( videoId, userId );
+    console.log(data)
     dispatch({ type: 'POST_HISTORY', payload: data });
     dispatch(getHistoryByUserId())
   } catch (error) {

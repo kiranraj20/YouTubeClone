@@ -3,12 +3,10 @@ import "./Videos.css";
 import { FaRegUser } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import DateConversion from '../DateConversion';
-import { useSelector } from 'react-redux';
 
 const Videos = ({vids}) => {
     
     const [videoRefs, setVideoRefs] = useState([]);
-    console.log(useSelector(state=>state))
 
     useEffect(() => {
         setVideoRefs((vidRefs) =>

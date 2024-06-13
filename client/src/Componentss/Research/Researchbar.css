@@ -15,17 +15,21 @@
   border-radius: 7px;
   font-size:small;
   font-weight: bold;
-  background-color: lightcyan;
 }
 
 .researchbar-elements:hover{
   cursor: pointer;
-  background-color: cyan;
+  background-color: lightcyan;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-
-.researchbar-elements:active{
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+.dark-mode{
+  background: #121212 ;
+  /* background-color: #383b43; */
+  color: #e4e2e3;
+  border-color: #E0E0E0 ;
+}
+.dark-hover:hover{
+  background-color: #383b43 ;
 }
 
 

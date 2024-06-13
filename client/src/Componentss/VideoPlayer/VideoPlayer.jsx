@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import VideoControls from '../VideoControls/VideoControls';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateVideo } from '../../Actions/Video';
-import { getHistoryByUserId, postHistory } from '../../Actions/history';
+import { postHistory } from '../../Actions/history';
 
 const VideoPlayer = ({ videoSrc, videoId }) => {
 

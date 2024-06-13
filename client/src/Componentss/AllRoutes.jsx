@@ -7,10 +7,10 @@ import Subscriptions from "./Subscriptions/Subscriptions";
 import Library from "./Library/Library";
 import Search from '../Pagess/Search/Search'
 
-function AllRoutes(){
+function AllRoutes({color}){
   return(
     <Routes>
-      <Route path='/' element={<Home/>} />
+      <Route path='/' element={<Home color={color} />} />
       <Route path='/explore' element={<Explore/>} />
       <Route path='/subscriptions' element={<Subscriptions/>} />
       <Route path='/library' element={<Library/>} />
