@@ -7,6 +7,7 @@ import channelReducers from './channel.js';
 import videoReducer from './video.js';
 import commentReducer from './comments.js';
 import historyReducer from './history.js'
+import OTPReducer from './OTP.js';
 
 export default combineReducers({
   counter: counterReducer,
@@ -17,4 +18,5 @@ export default combineReducers({
   videoReducer,
   commentReducer,
   historyReducer,
+  OTPReducer,
 });

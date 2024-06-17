@@ -9,6 +9,7 @@ import userRoutes from './routes/user.js';
 import videoRoutes from './routes/video.js';
 import commentRoutes from './routes/comment.js';
 import historyRoutes from './routes/history.js'
+import signupRoutes from './routes/signup.js'
 
 dotenv.config();
 
@@ -43,6 +44,7 @@ app.use('/user', userRoutes);
 app.use('/video', videoRoutes);
 app.use('/comment', commentRoutes);
 app.use('/history', historyRoutes);
+app.use('/signup', signupRoutes);
 
 const PORT = process.env.PORT || 5000;
 

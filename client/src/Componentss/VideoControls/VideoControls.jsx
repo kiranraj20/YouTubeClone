@@ -147,7 +147,7 @@ const VideoControls = ({videoRef, videoTag, resolution, setResolution ,showContr
                   ))}
                 </div>
               )}
-              <button className="menu-item">Download</button>
+              <button className="menu-item" >Download</button>
             </div>
           )}
         </div>

@@ -31,3 +31,6 @@ export const getAllComments = () => API.get('/comment/get');
 
 export const postHistory = (videoId, userId) => API.post(`/history/post/${userId}`,videoId);
 export const getHistoryByUserId = (userId) => API.get(`/history/get/${userId}`);
+
+export const verifyEmail = (email) => API.post(`/signup/email`,email);
+export const OTP = (OTP) => API.post(`/signup/OTP`,OTP);

@@ -6,6 +6,7 @@ import Explore from "./Explore/Explore";
 import Subscriptions from "./Subscriptions/Subscriptions";
 import Library from "./Library/Library";
 import Search from '../Pagess/Search/Search'
+import SignUp from "../Pagess/SignUp/SignUp";
 
 function AllRoutes({color}){
   return(
@@ -17,6 +18,7 @@ function AllRoutes({color}){
       <Route path='/channelpage/:Cid' element={<Channel/>} />
       <Route path='/video/:Vid' element={<VideoPage />} />
       <Route path='/search/:searchQuery' element={<Search />} />
+      <Route path='/SignUp' element={<SignUp />} />
     </Routes>
   )
 }

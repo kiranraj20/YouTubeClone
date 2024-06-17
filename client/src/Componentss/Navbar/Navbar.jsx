@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { IoIosSearch } from "react-icons/io";
 import { MdMic } from "react-icons/md";
 import { FaRegBell, FaRegUser } from "react-icons/fa6";
 import { GrChannel } from "react-icons/gr";
 import { FiLogOut } from "react-icons/fi";
-import { useGoogleLogin } from '@react-oauth/google';
+// import { useGoogleLogin } from '@react-oauth/google';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import OffcanvasCreate from '../Offcanvas/OffcanvasCreate';
@@ -19,9 +19,10 @@ import AllRoutes from '../AllRoutes';
 import { useNavigate } from 'react-router-dom';
 import { getHistoryByUserId } from '../../Actions/history';
 import { BsCoin } from "react-icons/bs";
+import Location from '../Location/Location';
 
 
-const Navbar = ({color}) => {
+const Navbar = ({color, setState}) => {
     const [currentUser, setCurrentUser] = useState({ email: '' });
     const [searchQuery, setSearchQuery] = useState("");
     const [searchList, setSearchList] = useState(false);
@@ -55,27 +56,27 @@ const Navbar = ({color}) => {
         }
     }, [selector, dispatch]);
 
-    const googleLogin = useGoogleLogin({
-        onSuccess: async (response) => {
-            const accessToken = response.access_token;
-            const userInfo = await fetchUserInfo(accessToken);
-            if (userInfo) {
-                dispatch(login({ email: userInfo.email }));
-            }
-        }
-    });
+    // const googleLogin = useGoogleLogin({
+    //     onSuccess: async (response) => {
+    //         const accessToken = response.access_token;
+    //         const userInfo = await fetchUserInfo(accessToken);
+    //         if (userInfo) {
+    //             dispatch(login({ email: userInfo.email }));
+    //         }
+    //     }
+    // });
 
-    const fetchUserInfo = useCallback(async (token) => {
-        try {
-            const response = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
-                headers: { Authorization: `Bearer ${token}` }
-            });
-            return response.ok ? await response.json() : null;
-        } catch (error) {
-            console.error('Failed to fetch user info', error);
-            return null;
-        }
-    }, []);
+    // const fetchUserInfo = useCallback(async (token) => {
+    //     try {
+    //         const response = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
+    //             headers: { Authorization: `Bearer ${token}` }
+    //         });
+    //         return response.ok ? await response.json() : null;
+    //     } catch (error) {
+    //         console.error('Failed to fetch user info', error);
+    //         return null;
+    //     }
+    // }, []);
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -94,6 +95,10 @@ const Navbar = ({color}) => {
         await dispatch(logout());
         navigate('/', { replace: true });
         window.location.reload()
+    }
+
+    const handleSignIn = () => {
+        navigate('/SignUp');
     }
     
 
@@ -125,6 +130,7 @@ const Navbar = ({color}) => {
                     </div>
                     {searchQuery && searchList && <SearchList color={color} titleArray={titleArray} setSearchQuery={setSearchQuery} setSearchList={setSearchList} />}
                     <div className={`mic ${color && 'dark-mode dark-hover'}`}><MdMic /></div>
+                    <Location setState={setState} color={color} />
                 </div>
                 <div className="profile-container">
                     <OffcanvasCreate className='profile-create-icon' color={color} />
@@ -164,7 +170,7 @@ const Navbar = ({color}) => {
                         </div>
                     ) : (
                         <div className='d-flex'>
-                            <div className={`profile-user text-nowrap ${color && 'dark-mode dark-hover'}`} onClick={googleLogin}>
+                            <div className={`profile-user text-nowrap ${color && 'dark-mode dark-hover'}`} onClick={handleSignIn}>
                                 <FaRegUser className='me-1' />Sign in
                             </div>
                         </div>
