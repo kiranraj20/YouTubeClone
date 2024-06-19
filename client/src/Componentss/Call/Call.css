@@ -1,0 +1,18 @@
+.call-container{
+  width: 20vw;
+}
+.call-f{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.call-close-btn{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size:x-large;
+}

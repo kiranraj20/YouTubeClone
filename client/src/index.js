@@ -7,6 +7,7 @@ import {thunk} from 'redux-thunk';
 import rootReducer from './Reducers';
 import ErrorBoundary from './ErrorBoundary';
 import { GoogleOAuthProvider } from '@react-oauth/google'
+import { SocketProvider } from './Context/SocketProvider';
 
 const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
 
@@ -16,7 +17,9 @@ root.render(
     <ErrorBoundary>
       <Provider store={store}>
         <React.StrictMode>
-          <App />
+          <SocketProvider>
+            <App />
+          </SocketProvider>
         </React.StrictMode>
       </Provider>
     </ErrorBoundary>

@@ -2,11 +2,8 @@
   display: flex;
   overflow-x: scroll;
   height: 8vh;
-  width: 93vw;
+  width: calc(100vw - 100px - 20vw);
   background-color: white;
-  position: sticky;
-  top: 8vh;
-  z-index: 1;
 }
 
 .researchbar-elements{

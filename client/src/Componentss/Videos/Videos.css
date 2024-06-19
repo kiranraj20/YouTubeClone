@@ -1,11 +1,10 @@
 .videos-container{
-  margin: 2% 1%;
+  padding: 2% 1%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 90vw;
+  width: 100%;
   top: 16vh;
-  z-index: -1;
 }
 .videos{
   padding: 0.8%;

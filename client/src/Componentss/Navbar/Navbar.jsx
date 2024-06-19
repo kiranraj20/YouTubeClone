@@ -20,6 +20,7 @@ import { useNavigate } from 'react-router-dom';
 import { getHistoryByUserId } from '../../Actions/history';
 import { BsCoin } from "react-icons/bs";
 import Location from '../Location/Location';
+import Call from '../Call/Call';
 
 
 const Navbar = ({color, setState}) => {
@@ -178,6 +179,7 @@ const Navbar = ({color, setState}) => {
                 </div>
             </div>
             <div className='d-flex'>
+                <Call />
                 <Sidebar color={color} />
                 <AllRoutes color={color} />
             </div>

@@ -54,11 +54,12 @@ const SignUp = ({ onSubmit }) => {
 
   return (
     <div className='form-box'>
-    <form onSubmit={handleSubmitEmail} style={{ backgroundColor: 'transparent' }}>
-      <h2>Login / Signup</h2>
+    <form className='form' onSubmit={handleSubmitEmail} style={{ backgroundColor: 'transparent' }}>
+      <h2 className='h2'>Login / Signup</h2>
       <div>
-        <label>Email:</label>
+        <label className='label'>Email:</label>
         <input
+          className='input'
           type="email"
           value={email}
           onChange={handleEmailChange}
@@ -66,14 +67,15 @@ const SignUp = ({ onSubmit }) => {
         />
         {emailError && <p className="error">{emailError}</p>}
       </div>
-      <button type="submit">Send OTP</button>
+      <button className='button-signup' type="submit">Send OTP</button>
     </form>
-    <form onSubmit={handleSubmitOTP} style={{ backgroundColor: 'transparent' }}>
-      <h2>Enter OTP</h2>
+    <form className='form' onSubmit={handleSubmitOTP} style={{ backgroundColor: 'transparent' }}>
+      <h2 className='h2'>Enter OTP</h2>
       <div>
-        <label>OTP:</label>
+        <label className='label'>OTP:</label>
         <input
           disabled={!OTPVisible}
+          className='input'
           type="text"
           value={otp}
           onChange={handleOTPChange}
@@ -81,7 +83,7 @@ const SignUp = ({ onSubmit }) => {
         />
         {otpError && <p className="error">{otpError}</p>}
       </div>
-      <button disabled={!OTPVisible} type="submit">Submit</button>
+      <button className='button-signup' disabled={!OTPVisible} type="submit">Submit</button>
     </form>
     </div>
   );

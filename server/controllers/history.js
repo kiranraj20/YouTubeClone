@@ -30,7 +30,6 @@ export const postHistory = async (req, res) => {
 export const getHistoryByUserId = async (req, res) => {
   const { id: userId } = req.params; 
 
-  console.log(req)
   try {
     const history = await History.findOne( {userId} )
 

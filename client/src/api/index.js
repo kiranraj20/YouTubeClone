@@ -34,3 +34,5 @@ export const getHistoryByUserId = (userId) => API.get(`/history/get/${userId}`);
 
 export const verifyEmail = (email) => API.post(`/signup/email`,email);
 export const OTP = (OTP) => API.post(`/signup/OTP`,OTP);
+
+export const sendMessage = (from, to, message) => API.post(`/message/post`,from, to, message);

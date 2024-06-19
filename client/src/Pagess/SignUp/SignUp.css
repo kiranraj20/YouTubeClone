@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
 }
-form {
+.form {
   width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -13,17 +13,17 @@ form {
   border-radius: 5px;
 }
 
-form h2 {
+.h2 {
   margin-bottom: 20px;
   text-align: center;
 }
 
-form label {
+.label {
   display: block;
   margin-bottom: 5px;
 }
 
-form input {
+.input {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
@@ -31,7 +31,7 @@ form input {
   border-radius: 3px;
 }
 
-form button {
+.button-signup {
   width: 100%;
   padding: 10px;
   background-color: #007bff;
@@ -41,7 +41,7 @@ form button {
   cursor: pointer;
 }
 
-form button:hover {
+.button-signup:hover {
   background-color: #0056b3;
 }
 
