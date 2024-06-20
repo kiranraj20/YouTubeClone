@@ -323,6 +323,7 @@ const Call = () => {
               <div className="">
                 <h3>Incoming Screen Stream</h3>
                 <ReactPlayer
+                controls
                   url={incomingScreenStream}
                   playing
                   muted
