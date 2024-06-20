@@ -12,24 +12,30 @@ class PeerService {
         ],
       });
 
-      PeerService.instance = this;  
+      PeerService.instance = this;
     }
 
-    return PeerService.instance; 
+    return PeerService.instance;
   }
 
   async getAnswer(offer) {
     if (this.peer) {
-      await this.peer.setRemoteDescription(offer);
-      const ans = await this.peer.createAnswer();
-      await this.peer.setLocalDescription(new RTCSessionDescription(ans));
-      return ans;
+      await this.peer.setRemoteDescription(new RTCSessionDescription(offer));
+      const answer = await this.peer.createAnswer();
+      await this.peer.setLocalDescription(new RTCSessionDescription(answer));
+      return answer;
     }
   }
 
-  async setLocalDescription(ans) {
+  async setLocalDescription(description) {
     if (this.peer) {
-      await this.peer.setRemoteDescription(new RTCSessionDescription(ans));
+      await this.peer.setLocalDescription(new RTCSessionDescription(description));
+    }
+  }
+
+  async setRemoteDescription(description) {
+    if (this.peer) {
+      await this.peer.setRemoteDescription(new RTCSessionDescription(description));
     }
   }
 
@@ -40,8 +46,14 @@ class PeerService {
       return offer;
     }
   }
+
+  async addIceCandidate(candidate) {
+    if (this.peer) {
+      await this.peer.addIceCandidate(new RTCIceCandidate(candidate));
+    }
+  }
 }
 
-const peerServiceInstance = new PeerService(); 
+const peerServiceInstance = new PeerService();
 
-export default peerServiceInstance;  
+export default peerServiceInstance;

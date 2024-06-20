@@ -1,5 +1,12 @@
-.call-container{
+.call-box{
   width: 20vw;
+  /* height: 92vh;
+  overflow-y: scroll;
+  border-bottom: 1px solid white; */
+  border-right: 1px solid white;
+}
+.call-container{
+  height: calc(98vh-8vh);
 }
 .call-f{
   display: flex;
