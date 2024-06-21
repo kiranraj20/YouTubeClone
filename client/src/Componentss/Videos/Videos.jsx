@@ -44,7 +44,7 @@ const Videos = ({vids}) => {
                     <Link to={`/video/${item._id}`}>
                         <video
                             className='video-video'
-                            src={`http://localhost:5500/${item.filePath}`}  //  http://localhost:5500/    https://null-class-internship-server.vercel.app/
+                            src={`https://null-class-internship-server.vercel.app/${item.filePath}`}  //  http://localhost:5500/    https://null-class-internship-server.vercel.app/
                             ref={videoRefs[index]}
                             style={{ outline: 'none',objectFit:'cover' }}
                             width={'100%'}
