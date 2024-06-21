@@ -115,6 +115,9 @@ app.use('/message', cors(), messageRoutes);
 app.get('/', (req, res) => {
   res.send('Hello from the server!');
 });
+app.get('/hello', (req, res) => {
+  res.send('hello brother')
+})
 
 // Start the server
 server.listen(PORT, () => {
