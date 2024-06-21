@@ -4,7 +4,6 @@ import Navbar from './Componentss/Navbar/Navbar';
 import { BrowserRouter } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getVideos } from './Actions/Video';
-import Geocode from 'react-geocode';
 
 function App() {
   const [color, setColor] = useState(false)
