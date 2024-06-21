@@ -28,9 +28,10 @@ const server = createServer(app);
 // Initialize Socket.IO with the HTTP server
 const io = new Server(server, {
   cors: {
-    origin: 'https://null-class-internship-client.vercel.app',
+    origin: 'https://null-class-internship-client.vercel.app/:1',
     methods: ['GET', 'POST'],
-    credentials: true
+    credentials: true,
+    allowedHeaders: 'Content-Type,Authorization',
   },
 });
 
