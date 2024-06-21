@@ -26,23 +26,24 @@ const app = express();
 const server = createServer(app);
 
 // Configure CORS with detailed settings
-const corsOptions = {
-  origin: ['https://null-class-internship-client.vercel.app', 'https://null-class-internship-client-kiranraj20s-projects.vercel.app','https://null-class-internship-client-git-main-kiranraj20s-projects.vercel.app','https://null-class-internship-client-dmvzmetd4-kiranraj20s-projects.vercel.app'],
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true, // If you need to send cookies or other credentials
-  allowedHeaders: ['Content-Type'],
-  optionsSuccessStatus: 204
-};
+// const corsOptions = {
+//   origin: ['https://null-class-internship-client.vercel.app', 'https://null-class-internship-client-kiranraj20s-projects.vercel.app','https://null-class-internship-client-git-main-kiranraj20s-projects.vercel.app','https://null-class-internship-client-dmvzmetd4-kiranraj20s-projects.vercel.app','http://localhost:3000'],
+//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//   credentials: true, // If you need to send cookies or other credentials
+//   allowedHeaders: ['Content-Type'],
+//   optionsSuccessStatus: 204
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors())
 
 // Initialize Socket.IO with the HTTP server
 const io = new Server(server, {
   cors: {
-    origin: 'https://null-class-internship-client.vercel.app',
+    origin: 'http://localhost:3000',
     methods: ['GET', 'POST'],
     headers: {
-      "Access-Control-Allow-Origin": "https://null-class-internship-client.vercel.app",
+      "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Credentials": "true",
       "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
     },
