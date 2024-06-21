@@ -2,7 +2,6 @@ import videoFiles from '../models/videoFiles.js';
 import ffmpeg from 'fluent-ffmpeg';
 import fs from 'fs';
 import ffmpegPath from '@ffmpeg-installer/ffmpeg';
-import ffprobePath from '@ffprobe-installer/ffprobe';
 
 export const uploadVideo = async (req, res, next) => {
   if (req.file === undefined) {
@@ -32,7 +31,6 @@ export const uploadVideo = async (req, res, next) => {
       const transcodingTasks = outputFiles.map(output => {
         return new Promise((resolve, reject) => {
           ffmpeg.setFfmpegPath(ffmpegPath.path);
-          ffmpeg.setFfprobePath(ffprobePath.path);
           ffmpeg(inputFile)
             .videoCodec('libx264')
             .size(`?x${output.res}`)
