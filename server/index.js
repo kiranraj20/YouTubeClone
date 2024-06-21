@@ -30,7 +30,8 @@ const io = new Server(server, {
   cors: {
     origin: 'https://null-class-internship-client.vercel.app',
     methods: ['GET', 'POST'],
-    allowedHeaders: ['Access-Control-Allow-Origin'],
+    allowedHeaders: ['Content-Type'],
+    credentials: true
   },
 });
 
@@ -81,6 +82,7 @@ const corsOptions = {
   origin: 'https://null-class-internship-client.vercel.app', // Replace with your Vercel frontend URL
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // If you need to send cookies or other credentials
+  allowedHeaders: ['Content-Type'],
   optionsSuccessStatus: 204
 };
 
