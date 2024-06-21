@@ -41,8 +41,11 @@ const io = new Server(server, {
   cors: {
     origin: 'https://null-class-internship-client.vercel.app',
     methods: ['GET', 'POST'],
-    credentials: true,
-    allowedHeaders: 'Content-Type,Authorization',
+    headers: {
+      "Access-Control-Allow-Origin": "https://null-class-internship-client.vercel.app",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+    },
   },
 });
 
