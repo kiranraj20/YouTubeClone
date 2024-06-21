@@ -105,12 +105,12 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use('/uploads', cors(), express.static(path.join('uploads')));
 
 // Routes
-app.use('/user', cors(), userRoutes);
-app.use('/video', cors(), videoRoutes);
-app.use('/comment', cors(), commentRoutes);
-app.use('/history', cors(), historyRoutes);
-app.use('/signup', cors(), signupRoutes);
-app.use('/message', cors(), messageRoutes);
+app.use('/user', userRoutes);
+app.use('/video', videoRoutes);
+app.use('/comment', commentRoutes);
+app.use('/history', historyRoutes);
+app.use('/signup', signupRoutes);
+app.use('/message', messageRoutes);
 
 app.get('/', (req, res) => {
   res.send('Hello from the server!');
