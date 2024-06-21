@@ -15,7 +15,7 @@ let store = '';
 export const verifyEmail = async (req, res) => {
   const email = Object.keys(req.body)[0];
   const OTP = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000
-  const mailOptions = {
+  const mailOptions = { 
     from: 'miami Abner Jerde 👻 <kiranraj80555@gmail.com>', // sender address
     to: email,
     subject: "OTP for your youtube login. ✔", 

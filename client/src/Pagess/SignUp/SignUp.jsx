@@ -24,12 +24,13 @@ const SignUp = ({ onSubmit }) => {
   };
 
   const handleSubmitEmail = (event) => {
-    event.preventDefault();
+    event.preventDefault(); 
     if (!email || !/\S+@\S+\.\S+/.test(email)) {
       setEmailError('Please enter a valid email address');
       return;
     }
-    alert(`OTP has been sent to ${email} please check in ETHEREAL mail box..`)
+    alert(`OTP has been sent to ${email} please check in ETHEREAL mail box by using credentials user: 'gabe.blanda13@ethereal.email',
+      pass: 'zJNU9aZbeGjw6BbmNr' or you can just see the OTP in console logs`)
     setEmailError('');
     setOTPVisible(true)
     dispatch(verifyEmail(email))
