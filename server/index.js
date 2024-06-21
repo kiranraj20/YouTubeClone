@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import path from 'path';
-import { createServer } from 'http'; // Import createServer from 'http'
+import { createServer } from 'http'; 
 import { Server } from 'socket.io';
 
 import userRoutes from './routes/user.js';
@@ -28,7 +28,7 @@ const server = createServer(app);
 // Initialize Socket.IO with the HTTP server
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: 'https://null-class-internship-client-kiranraj20s-projects.vercel.app',
     methods: ['GET', 'POST'],
   },
 });
@@ -76,11 +76,14 @@ io.on('connection', (socket) => {
 });
 
 // Configure CORS with detailed settings
-app.use(cors({
-  origin: '*', // Replace with your frontend origin
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
-}));
+const corsOptions = {
+  origin: 'https://null-class-internship-client-kiranraj20s-projects.vercel.app', // Replace with your Vercel frontend URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // If you need to send cookies or other credentials
+  optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
 
 // Middleware to log requests
 app.use((req, res, next) => {
