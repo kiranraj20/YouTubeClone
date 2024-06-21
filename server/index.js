@@ -78,8 +78,15 @@ io.on('connection', (socket) => {
 });
 
 // Configure CORS with detailed settings
+var whitelist = ['https://null-class-internship-client.vercel.app/', 'https://null-class-internship-client-kiranraj20s-projects.vercel.app/','https://null-class-internship-client-git-main-kiranraj20s-projects.vercel.app/','https://null-class-internship-client-dmvzmetd4-kiranraj20s-projects.vercel.app/']
 const corsOptions = {
-  origin: 'https://null-class-internship-client.vercel.app', // Replace with your Vercel frontend URL
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  },
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // If you need to send cookies or other credentials
   allowedHeaders: ['Content-Type'],
@@ -99,15 +106,15 @@ app.use(bodyParser.json({ limit: '30mb' }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 
 // Static Files Middleware
-app.use('/uploads', express.static(path.join('uploads')));
+app.use('/uploads', cors(), express.static(path.join('uploads')));
 
 // Routes
-app.use('/user', userRoutes);
-app.use('/video', videoRoutes);
-app.use('/comment', commentRoutes);
-app.use('/history', historyRoutes);
-app.use('/signup', signupRoutes);
-app.use('/message', messageRoutes);
+app.use('/user', cors(), userRoutes);
+app.use('/video', cors(), videoRoutes);
+app.use('/comment', cors(), commentRoutes);
+app.use('/history', cors(), historyRoutes);
+app.use('/signup', cors(), signupRoutes);
+app.use('/message', cors(), messageRoutes);
 
 app.get('/', (req, res) => {
   res.send('Hello from the server!');
