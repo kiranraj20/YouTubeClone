@@ -25,10 +25,21 @@ const app = express();
 // Create HTTP server and integrate with Express app
 const server = createServer(app);
 
+// Configure CORS with detailed settings
+const corsOptions = {
+  origin: ['https://null-class-internship-client.vercel.app', 'https://null-class-internship-client-kiranraj20s-projects.vercel.app','https://null-class-internship-client-git-main-kiranraj20s-projects.vercel.app','https://null-class-internship-client-dmvzmetd4-kiranraj20s-projects.vercel.app'],
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // If you need to send cookies or other credentials
+  allowedHeaders: ['Content-Type'],
+  optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
+
 // Initialize Socket.IO with the HTTP server
 const io = new Server(server, {
   cors: {
-    origin: 'https://null-class-internship-client.vercel.app/:1',
+    origin: 'https://null-class-internship-client.vercel.app',
     methods: ['GET', 'POST'],
     credentials: true,
     allowedHeaders: 'Content-Type,Authorization',
@@ -76,24 +87,6 @@ io.on('connection', (socket) => {
     io.to(to).emit('screen:stop', { from: socket.id });
   });
 });
-
-// Configure CORS with detailed settings
-var whitelist = ['https://null-class-internship-client.vercel.app/', 'https://null-class-internship-client-kiranraj20s-projects.vercel.app/','https://null-class-internship-client-git-main-kiranraj20s-projects.vercel.app/','https://null-class-internship-client-dmvzmetd4-kiranraj20s-projects.vercel.app/']
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  },
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true, // If you need to send cookies or other credentials
-  allowedHeaders: ['Content-Type'],
-  optionsSuccessStatus: 204
-};
-
-app.use(cors(corsOptions));
 
 // Middleware to log requests
 app.use((req, res, next) => {
