@@ -1,11 +1,11 @@
 import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import path from 'path';
-import { createServer } from 'http';
+import { createServer } from 'http'; // Import createServer from 'http'
 import { Server } from 'socket.io';
-import dotenv from 'dotenv';
-import mongoose from 'mongoose';
 
 import userRoutes from './routes/user.js';
 import videoRoutes from './routes/video.js';
@@ -16,47 +16,25 @@ import messageRoutes from './routes/message.js';
 
 dotenv.config();
 
+const PORT = process.env.PORT || 5500;
+const DB_URL = process.env.CONNECTION_URL;
+
+// Initialize Express app
 const app = express();
+
+// Create HTTP server and integrate with Express app
 const server = createServer(app);
+
+// Initialize Socket.IO with the HTTP server
 const io = new Server(server, {
   cors: {
-    origin: 'https://null-class-internship-client.vercel.app/',
+    origin: 'http://localhost:3000',
     methods: ['GET', 'POST'],
   },
 });
 
-app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
-}));
-
-app.use(bodyParser.json({ limit: '30mb' }));
-app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
-
-app.use('/uploads', express.static(path.join('uploads')));
-
-app.use('/user', userRoutes);
-app.use('/video', videoRoutes);
-app.use('/comment', commentRoutes);
-app.use('/history', historyRoutes);
-app.use('/signup', signupRoutes);
-app.use('/message', messageRoutes);
-
-app.get('/', (req, res) => {
-  res.send('Hello from the server!');
-});
-
-const PORT = process.env.PORT || 5500;
-const DB_URL = process.env.CONNECTION_URL;
-
-mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log('Database connection successful');
-  })
-  .catch((error) => {
-    console.log('Database connection error:', error);
-  });
+const emailToSocketIdMap = new Map();
+const socketIdToEmailMap = new Map();
 
 io.on('connection', (socket) => {
   console.log(`Socket Connected`, socket.id);
