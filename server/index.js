@@ -26,7 +26,7 @@ const app = express();
 const server = createServer(app);
 
 // Initialize Socket.IO with the HTTP server
-const io = new Server(8000, {
+const io = new Server(server, {
   cors: {
     origin: 'http://localhost:3000',
     methods: ['GET', 'POST'],
