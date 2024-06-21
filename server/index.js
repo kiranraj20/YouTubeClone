@@ -28,7 +28,7 @@ const server = createServer(app);
 // Initialize Socket.IO with the HTTP server
 const io = new Server(server, {
   cors: {
-    origin: 'https://null-class-internship-client-kiranraj20s-projects.vercel.app',
+    origin: 'https://null-class-internship-client.vercel.app',
     methods: ['GET', 'POST'],
   },
 });
@@ -77,7 +77,7 @@ io.on('connection', (socket) => {
 
 // Configure CORS with detailed settings
 const corsOptions = {
-  origin: 'https://null-class-internship-client-kiranraj20s-projects.vercel.app', // Replace with your Vercel frontend URL
+  origin: 'https://null-class-internship-client.vercel.app', // Replace with your Vercel frontend URL
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // If you need to send cookies or other credentials
   optionsSuccessStatus: 204
