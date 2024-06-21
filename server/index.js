@@ -30,6 +30,7 @@ const io = new Server(server, {
   cors: {
     origin: 'https://null-class-internship-client.vercel.app',
     methods: ['GET', 'POST'],
+    allowedHeaders: ['Access-Control-Allow-Origin'],
   },
 });
 
