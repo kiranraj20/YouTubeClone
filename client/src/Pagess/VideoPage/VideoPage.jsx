@@ -67,7 +67,7 @@ const VideoPage = () => {
         <div className="video-page-video">
           {data && (
             <VideoPlayer
-            videoSrc = {`http://localhost:5500/${data?.filePath}`}
+            videoSrc = {`https://null-class-internship-server.vercel.app/${data?.filePath}`}
             videoId={videoId}
             />
           )}

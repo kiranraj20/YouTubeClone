@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API = axios.create({baseURL : 'http://localhost:5500'})  //  http://localhost:5500/   https://null-class-internship-server.vercel.app/
+const API = axios.create({baseURL : 'https://null-class-internship-server.vercel.app'})  //  http://localhost:5500/   https://null-class-internship-server.vercel.app/
 API.interceptors.request.use((req) => {
   if(localStorage.getItem('profile')) {
       req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('profile')).token}`;

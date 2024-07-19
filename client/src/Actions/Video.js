@@ -15,7 +15,7 @@ export const getVideos = () => async (dispatch) => {
     const { data } = await api.getVideos(); 
     dispatch({ type: 'FETCH_ALL_VIDEOS', payload: data });
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 }
 

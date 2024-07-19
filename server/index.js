@@ -103,7 +103,7 @@ app.use(bodyParser.json({ limit: '30mb' }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 
 // Static Files Middleware
-app.use('/uploads', cors(), express.static(path.join('uploads')));
+app.use('/uploads', express.static(path.join('uploads')));
 
 // Routes
 app.use('/user', userRoutes);
