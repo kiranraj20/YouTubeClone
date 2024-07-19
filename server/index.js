@@ -99,7 +99,7 @@ app.use((err, req, res, next) => {
 });
 
 // Static Files Middleware
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads', express.static(path.join('uploads')));
 
 // Middleware to log requests
 app.use((req, res, next) => {
