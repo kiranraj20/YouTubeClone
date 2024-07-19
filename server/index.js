@@ -92,6 +92,11 @@ io.on('connection', (socket) => {
   });
 });
 
+import { fileURLToPath } from 'url';
+// Get the directory name of the current module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__dirname, 'uploads');
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
