@@ -95,7 +95,7 @@ io.on('connection', (socket) => {
 import { fileURLToPath } from 'url';
 // Get the directory name of the current module
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__dirname, 'uploads');
+const __dirname = path.dirname(__filename);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -104,7 +104,7 @@ app.use((err, req, res, next) => {
 });
 
 // Static Files Middleware
-app.use('/uploads', express.static(path.join('uploads')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Middleware to log requests
 app.use((req, res, next) => {
