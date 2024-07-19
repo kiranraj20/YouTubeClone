@@ -92,6 +92,12 @@ io.on('connection', (socket) => {
   });
 });
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something went wrong!');
+});
+
 // Static Files Middleware
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
