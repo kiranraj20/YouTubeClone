@@ -7,39 +7,7 @@
     }
   ],
   "routes": [
-    {
-      "src": "/user/(.*)",
-      "dest": "./index.js"
-    },
-    {
-      "src": "/video/getAllVideos ",
-      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials": "true",
-        "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-      }
-    },
-    {
-      "src": "/comment/(.*)",
-      "dest": "./index.js"
-    },
-    {
-      "src": "/history/(.*)",
-      "dest": "./index.js"
-    },
-    {
-      "src": "/signup/(.*)",
-      "dest": "./index.js"
-    },
-    {
-      "src": "/message/(.*)",
-      "dest": "./index.js"
-    },
-    {
-      "src": "/hello",
-      "dest": "./index.js"
-    },
+    
     {
       "src": "/(.*)",
       "dest": "/",
