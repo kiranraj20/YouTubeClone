@@ -92,6 +92,9 @@ io.on('connection', (socket) => {
   });
 });
 
+// Static Files Middleware
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 // Middleware to log requests
 app.use((req, res, next) => {
   console.log(`Request Method: ${req.method}, Request URL: ${req.url}`);
@@ -101,9 +104,6 @@ app.use((req, res, next) => {
 // Body Parser Middleware
 app.use(bodyParser.json({ limit: '30mb' }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
-
-// Static Files Middleware
-app.use('/uploads', express.static(path.join('uploads')));
 
 // Routes
 app.use('/user', userRoutes);
