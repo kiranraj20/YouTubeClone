@@ -42,10 +42,9 @@ const Videos = ({vids}) => {
             {vids?.map((item, index) => (
                 <div className="videos" key={item._id}>
                     <Link to={`/video/${item._id}`}>
-                    <h2>{`https://null-class-internship-server.vercel.app/${item.filePath}`}</h2>
                         <video
                             className='video-video'
-                            src={`https://null-class-internship-server.vercel.app/${item.filePath}`}  //  http://localhost:5500/    https://null-class-internship-server.vercel.app/
+                            src={`http://localhost:5500/${item.filePath}`}  //  http://localhost:5500/    https://null-class-internship-server.vercel.app/
                             ref={videoRefs[index]}
                             style={{ outline: 'none',objectFit:'cover' }}
                             width={'100%'}
