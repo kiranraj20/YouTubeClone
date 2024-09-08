@@ -12,8 +12,8 @@ export const postHistory = (videoId, userId)=> async(dispatch) => {
 
 export const getHistoryByUserId = (userId)=> async(dispatch) => {
   try {
-    const { data } = await api.getHistoryByUserId(userId);
-    dispatch({ type: 'FETCH_ALL_HISTORY', payload: data });
+    // const { data } = await api.getHistoryByUserId(userId);
+    // dispatch({ type: 'FETCH_ALL_HISTORY', payload: data });
   } catch (error) {
     console.log(error)
   }

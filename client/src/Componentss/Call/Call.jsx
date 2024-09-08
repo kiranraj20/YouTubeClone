@@ -234,6 +234,7 @@ const Call = () => {
     const handleIncomingScreenStream = (ev) => {
       const screenStream = ev.streams[0];
       console.log('Incoming Screen Stream')
+      console.log(screenStream)
       setIncomingScreenStream(screenStream);
     };
 
@@ -322,6 +323,7 @@ const Call = () => {
             {incomingScreenStream && (
               <div className="">
                 <h3>Incoming Screen Stream</h3>
+                <h1>{incomingScreenStream[0]}</h1>
                 <ReactPlayer
                 controls
                   url={incomingScreenStream}

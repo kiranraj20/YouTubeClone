@@ -1,4 +1,6 @@
 .search-list-container{
+  position: absolute;
+  top: 50px;
   width: 40vw;
   margin-top: 5px;
   padding: 10px 0px;
